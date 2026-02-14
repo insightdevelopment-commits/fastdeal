@@ -1,0 +1,29 @@
+﻿MongoDB URI (masked): mongodb+srv://fastdealdevelopment:****@fastdealdb.hntn2ng.mongodb.net/?appName=FastDealDB
+
+Attempting connection...
+node : 
+строка:1 знак:21
++ 
+$env:FORCE_COLOR=0; 
+node 
+test-connection.js 
+2>&1 | Out-File 
+-FilePath ...
++                    
+ ~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: (:String   
+ ) [], RemoteExce    
+ption
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+тЭМ Connection 
+failed!
+Error: querySrv 
+ECONNREFUSED _mongodb
+._tcp.fastdealdb.hntn
+2ng.mongodb.net
