@@ -6,7 +6,7 @@ const path = require('path');
 // const connectDB = require('./config/database'); // Removed for Supabase migration
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 
 // Middleware
 app.use(cors());

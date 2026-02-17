@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, ArrowUp, ArrowDown } from 'lucide-react';
 import Background from './Background';
 import Sidebar from './Sidebar';
+import RightSidebar from './RightSidebar';
 import AuthHeader from './AuthHeader';
 import Footer from './Footer';
 import SearchLoader from './SearchLoader';
@@ -15,6 +16,9 @@ const MainPage = () => {
     const [searchQuery, setSearchQuery] = useState('');
     const [isFocused, setIsFocused] = useState(false);
     const [placeholderIndex, setPlaceholderIndex] = useState(0);
+
+    // Right Sidebar State
+    const [isRightSidebarOpen, setIsRightSidebarOpen] = useState(false);
 
     // Search state
     const [isLoading, setIsLoading] = useState(false);
@@ -117,7 +121,8 @@ const MainPage = () => {
             {/* Elements independent of scroll container */}
             <Background scrollContainer={scrollContainerRef} speed={1.0} />
             <Sidebar />
-            <AuthHeader />
+            <RightSidebar isOpen={isRightSidebarOpen} onClose={() => setIsRightSidebarOpen(false)} />
+            <AuthHeader onAvatarClick={() => setIsRightSidebarOpen(true)} />
 
             {/* Scrolling Container */}
             <div
