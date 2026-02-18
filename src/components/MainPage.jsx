@@ -120,6 +120,28 @@ const MainPage = () => {
         <div className="relative w-full h-screen overflow-hidden bg-obsidian">
             {/* Elements independent of scroll container */}
             <Background scrollContainer={scrollContainerRef} speed={1.0} />
+
+            {/* User Provided Background Image - Fixed & Scaled to hide watermark */}
+            <motion.div
+                className="fixed inset-0 w-full h-full pointer-events-none overflow-hidden"
+                style={{ zIndex: 0 }}
+            >
+                <motion.img
+                    src="/background/mainpage_background.png"
+                    alt="Background"
+                    className="w-full h-full object-cover opacity-60 mix-blend-screen"
+                    initial={{ scale: 1.1 }}
+                    animate={{
+                        scale: [1.1, 1.15, 1.1],
+                        rotate: [0, 1, 0],
+                    }}
+                    transition={{
+                        duration: 20,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                    }}
+                />
+            </motion.div>
             <Sidebar />
             <RightSidebar isOpen={isRightSidebarOpen} onClose={() => setIsRightSidebarOpen(false)} />
             <AuthHeader onAvatarClick={() => setIsRightSidebarOpen(true)} />
@@ -129,28 +151,7 @@ const MainPage = () => {
                 ref={scrollContainerRef}
                 className="h-full w-full overflow-y-scroll scroll-smooth scrollbar-hide text-white font-outfit relative z-0"
             >
-                {/* User Provided Background Image - Fixed & Scaled to hide watermark */}
-                {/* Note: Kept inside or moved out? Fixed position relative to viewport works better outside if no transforms on parent. */}
-                <motion.div
-                    className="fixed inset-0 w-full h-full pointer-events-none overflow-hidden"
-                    style={{ zIndex: 0 }}
-                >
-                    <motion.img
-                        src="/background/mainpage_background.png"
-                        alt="Background"
-                        className="w-full h-full object-cover opacity-60 mix-blend-screen"
-                        initial={{ scale: 1.1 }}
-                        animate={{
-                            scale: [1.1, 1.15, 1.1],
-                            rotate: [0, 1, 0],
-                        }}
-                        transition={{
-                            duration: 20,
-                            repeat: Infinity,
-                            ease: "easeInOut"
-                        }}
-                    />
-                </motion.div>
+
 
                 {/* Main Hero Section - Reduced height for better flow */}
                 <motion.section
@@ -289,7 +290,7 @@ const MainPage = () => {
                 </section>
 
                 {/* Footer */}
-                <section className="relative z-10 bg-transparent">
+                <section className="relative z-10 bg-black/20">
                     <Footer />
                 </section>
             </div>
