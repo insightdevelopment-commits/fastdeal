@@ -26,16 +26,15 @@ const Solution = () => {
     ];
 
     return (
-        <div className="relative min-h-screen w-full flex flex-col items-center justify-center py-24 overflow-hidden z-10">
-            {/* Background Video */}
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-5xl h-[600px] z-0 pointer-events-none rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-                <div className="absolute inset-0 bg-obsidian/40 z-10" />
+        <div className="relative min-h-screen w-full flex flex-col items-center justify-center py-24 overflow-hidden z-10 gap-16">
+            {/* Main Video Placed Between Sections */}
+            <div className="relative w-[90%] md:w-[80%] max-w-5xl md:h-[600px] h-[300px] z-20 rounded-3xl overflow-hidden shadow-[0_0_30px_rgba(138,43,226,0.3)] border border-white/10 mx-auto">
                 <video
                     autoPlay
                     loop
                     muted
                     playsInline
-                    className="w-full h-full object-cover opacity-80"
+                    className="w-full h-full object-cover"
                 >
                     <source src="/videos/fastdealvid.mp4" type="video/mp4" />
                 </video>

@@ -123,9 +123,9 @@ const Relevance = () => {
 
     return (
         <motion.div
-            className="w-full pt-10 pb-20 flex flex-col items-center justify-center relative z-10 px-6"
+            className="w-full pt-10 pb-20 flex flex-col items-center justify-center relative z-10 px-6 relevance-container"
             initial={{ opacity: 0, backgroundColor: "rgba(0,0,0,0)" }}
-            whileInView={{ opacity: 1, backgroundColor: "rgba(0,0,0,0.4)" }}
+            whileInView={{ opacity: 1, backgroundColor: "var(--relevance-bg, rgba(0,0,0,0.4))" }}
             transition={{ duration: 1 }}
             viewport={{ margin: "-20%" }}
         >

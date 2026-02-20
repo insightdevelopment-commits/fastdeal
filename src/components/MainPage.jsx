@@ -129,7 +129,7 @@ const MainPage = () => {
                 <motion.img
                     src="/background/mainpage_background.png"
                     alt="Background"
-                    className="w-full h-full object-cover opacity-60 mix-blend-screen"
+                    className="w-full h-full object-cover opacity-60 mix-blend-screen mainpage-bg-img"
                     initial={{ scale: 1.1 }}
                     animate={{
                         scale: [1.1, 1.15, 1.1],

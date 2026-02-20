@@ -637,13 +637,15 @@ const Background = ({ scrollContainer, problemHover, speed = 1 }) => { // Accept
             smoothedScrollRef.current = lerp(smoothedScrollRef.current, scrollRef.current, 0.08);
             const scrollY = smoothedScrollRef.current;
 
+            const isLightMode = document.documentElement.classList.contains('light-mode');
+
             ctx.globalAlpha = 1;
-            ctx.fillStyle = COLORS.bg;
+            ctx.fillStyle = isLightMode ? '#ffffff' : COLORS.bg;
             ctx.fillRect(0, 0, width, height);
 
             const t = Date.now() * 0.0005 * currentSpeed;
             const grad1 = ctx.createRadialGradient(200, 200, 0, 200, 200, 600);
-            grad1.addColorStop(0, 'rgba(75, 0, 130, 0.15)');
+            grad1.addColorStop(0, isLightMode ? 'rgba(138, 43, 226, 0.05)' : 'rgba(75, 0, 130, 0.15)');
             grad1.addColorStop(1, 'transparent');
             ctx.fillStyle = grad1;
             ctx.fillRect(0, 0, width, height);
